@@ -36,7 +36,7 @@
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
 
-		<!-- In-memory database (H2) - good for learning and testing -->
+		<!-- In-memory database (H2) -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

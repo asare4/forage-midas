@@ -1,6 +1,10 @@
 general:
   kafka-topic: trader-updates
 
+midas:
+  kafka:
+    topic: midas-transaction-topic
+
 spring:
   kafka:
     producer:
@@ -11,5 +15,8 @@ spring:
 
     # This is important so Spring trusts your Transaction class
     consumer:
+      auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: com.jpmc.midascore.foundation
+        spring.json.value.default.type: com.jpmc.midascore.foundation.Transaction
